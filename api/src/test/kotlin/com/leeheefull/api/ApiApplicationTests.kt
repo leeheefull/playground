@@ -1,10 +1,10 @@
-package com.leeheefull.playground
+package com.leeheefull.api
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest
 
 @SpringBootTest
-class PlaygroundApplicationTests {
+class ApiApplicationTests {
 
     @Test
     fun contextLoads() {
