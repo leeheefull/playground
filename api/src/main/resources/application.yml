@@ -1,1 +1,9 @@
-
+spring:
+  profiles:
+    group:
+      test:
+        - domain-test
+      local:
+        - domain-local
+      prod:
+        - domain-prod
