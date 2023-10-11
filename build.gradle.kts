@@ -1,13 +1,16 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    id("org.springframework.boot") version "2.7.7" apply false
-    id("io.spring.dependency-management") version "1.1.0"
-    id("org.asciidoctor.convert") version "1.5.8" apply false
+    val springBootVersion = "2.7.7"
+    val kotlinVersion = "1.7.20"
 
-    kotlin("jvm") version "1.7.20"
-    kotlin("plugin.spring") version "1.7.20" apply false
-    kotlin("kapt") version "1.7.20" apply false
+    id("org.springframework.boot") version springBootVersion apply false
+    id("io.spring.dependency-management") version "1.1.0"
+
+    kotlin("jvm") version kotlinVersion
+    kotlin("plugin.spring") version kotlinVersion apply false
+    kotlin("plugin.jpa") version kotlinVersion apply false
+    kotlin("kapt") version kotlinVersion apply false
 }
 
 allprojects {
@@ -31,8 +34,6 @@ subprojects {
     dependencies {
         implementation(kotlin("reflect"))
         implementation(kotlin("stdlib"))
-        implementation("io.github.microutils:kotlin-logging-jvm:3.0.0")
-        implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
         testImplementation("org.springframework.boot:spring-boot-starter-test")
     }
 
