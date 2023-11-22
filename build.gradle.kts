@@ -35,6 +35,7 @@ subprojects {
         implementation(kotlin("reflect"))
         implementation(kotlin("stdlib"))
         testImplementation("org.springframework.boot:spring-boot-starter-test")
+        implementation("io.github.microutils:kotlin-logging-jvm:3.0.0")
     }
 
     tasks.withType<KotlinCompile> {
