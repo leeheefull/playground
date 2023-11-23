@@ -18,6 +18,9 @@ dependencies {
     // kotlin
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation ("org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion")
+
+    // log
+    implementation("com.github.maricn:logback-slack-appender:1.6.1")
 }
 
 tasks.register("prepareKotlinBuildScriptModel") {}

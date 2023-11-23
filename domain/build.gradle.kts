@@ -21,6 +21,7 @@ repositories {
 dependencies {
     // DB
     implementation("mysql:mysql-connector-java:$mysqlVersion")
+    runtimeOnly("com.h2database:h2")
 
     // ORM
     api("org.springframework.boot:spring-boot-starter-data-jpa")
