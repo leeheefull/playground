@@ -4,3 +4,13 @@ server:
 spring:
   application:
     name: playground-api
+
+logging:
+  file:
+    name: ${spring.application.name}
+  config: classpath:logback-spring-prod.xml
+
+webhook:
+  slack:
+    baseUrl: https://hooks.slack.com
+    endpoint: /services/{workspace-identifier}/{webhook-identifier}/{token-key}

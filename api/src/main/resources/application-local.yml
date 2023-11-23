@@ -4,3 +4,18 @@ server:
 spring:
   application:
     name: playground-api-local
+
+logging:
+  file:
+    name: ${spring.application.name}
+  config: classpath:logback-spring-local.xml
+  level:
+    org:
+      hibernate:
+        SQL: debug
+        orm.jdbc.bind: trace
+
+webhook:
+  slack:
+    baseUrl: https://hooks.slack.com
+    endpoint: /services/{workspace-identifier}/{webhook-identifier}/{token-key}

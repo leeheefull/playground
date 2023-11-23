@@ -1,12 +1,15 @@
 spring:
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/playground
-    username: root
-    password: 2277
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:playground
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true
   jpa:
-    database: mysql
-    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    database: h2
+    database-platform: org.hibernate.dialect.H2Dialect
     properties:
       hibernate:
         hbm2ddl:
