@@ -18,4 +18,4 @@ logging:
 webhook:
   slack:
     baseUrl: https://hooks.slack.com
-    endpoint: /services/{workspace-identifier}/{webhook-identifier}/{token-key}
+    endpoint: ${SLACK_WEBHOOK_URL}
