@@ -29,6 +29,10 @@ class CommentService(
         commentRepository.findByIdAndDeletedIsFalse(id)
             .orElseThrow { throw EntityNotFoundException(COMMENT_NOT_EXIST) }
 
+    @Transactional(readOnly = true)
+    fun findByPostId(postId: Long): List<Comment> =
+        commentRepository.findByPostIdAndDeletedIsFalse(postId)
+
     @Transactional
     fun update(id: Long, content: String?) {
         find(id).update(content)
@@ -37,5 +41,10 @@ class CommentService(
     @Transactional
     fun delete(id: Long) {
         find(id).delete()
+    }
+
+    @Transactional
+    fun deleteByPostId(postId: Long) {
+        findByPostId(postId).forEach { commentRepository.delete(it) }
     }
 }

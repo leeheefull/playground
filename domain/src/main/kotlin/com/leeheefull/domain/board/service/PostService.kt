@@ -18,7 +18,7 @@ class PostService(
         board: BoardType,
         title: String,
         content: String,
-        tags: List<String>?,
+        tags: List<String> = emptyList(),
     ) {
         Post(
             memberId = memberId,
